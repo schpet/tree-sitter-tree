@@ -1,0 +1,16 @@
+==================
+Basic flat list
+==================
+first item
+second item
+third item
+
+---
+
+(document
+  (list_item
+    (content))
+  (list_item
+    (content))
+  (list_item
+    (content)))

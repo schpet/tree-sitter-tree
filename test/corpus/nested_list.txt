@@ -1,0 +1,60 @@
+==================
+Nested list
+==================
+first item
+    first nested item
+    second nested item
+        deeply nested item
+    third nested item
+
+---
+
+(document
+  (list_item
+    (content)
+    (children
+      (list_item
+        (content))
+      (list_item
+        (content)
+        (children
+          (list_item
+            (content))))
+      (list_item
+        (content)))))
+
+
+==================
+Nested list with siblings
+==================
+first item
+    first nested item
+    second nested item
+        deeply nested item
+    third nested item
+second item
+    another nested item
+third item
+
+---
+
+(document
+  (list_item
+    (content)
+    (children
+      (list_item
+        (content))
+      (list_item
+        (content)
+        (children
+          (list_item
+            (content))))
+      (list_item
+        (content))))
+  (list_item
+    (content)
+    (children
+      (list_item
+        (content))))
+  (list_item
+    (content)))
