@@ -1,7 +1,7 @@
 default: generate build test
 
 aider:
-    aider --read README.md grammar.js src/scanner.c test/corpus/*
+    aider grammar.js src/scanner.c test/corpus/*
 
 test: generate
     tree-sitter test

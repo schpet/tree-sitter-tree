@@ -1,18 +1,20 @@
 ==================
 Multiline list item
 ==================
-the first list item can have multiple lines, so long as they are indented by two spaces
-  with multiple lines. this line is part of the first list item's content, it's not a child
-  it can have multiple paragraphs, too
-second item
-third item
+- list items may have
+  multiple lines
+- second item
+- third item
 
 ---
 
 (document
   (list_item
-    (content))
+    (list_marker)
+    (list_item_content))
   (list_item
-    (content))
+    (list_marker)
+    (list_item_content))
   (list_item
-    (content)))
+    (list_marker)
+    (list_item_content)))

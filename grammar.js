@@ -1,8 +1,3 @@
-const PREC = {
-  INDENT: 1,
-  DEDENT: 1,
-};
-
 module.exports = grammar({
   name: 'tree',
 
@@ -25,17 +20,19 @@ module.exports = grammar({
     ),
 
     list_item: $ => seq(
-      field('content', $.content),
-      optional($._newline),
-      optional(field('children', $.children))
+      $.list_marker,
+      $.list_item_content,
+      optional(seq($._newline, optional($.list)))
     ),
 
-    content: $ => /[^\n]+/,
+    list_marker: $ => '-',
 
-    children: $ => prec.dynamic(PREC.INDENT, seq(
+    list_item_content: $ => /[^\n]+/,
+
+    list: $ => seq(
       $._indent,
       repeat1($._list_item_or_empty_line),
       $._dedent
-    )),
+    ),
   }
 });
